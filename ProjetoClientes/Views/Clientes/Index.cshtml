@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ProjetoClientes.Models.Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>Listagem de Clientes</h2>
+
+<a asp-action="NovoCliente" class="btn btn-primary">Novo Cliente</a>
+
+<div class="container">
+
+    <table class="table>">
+        <thead>
+            <tr>
+                <th>
+                   |  Id  | 
+                </th>
+            
+                <th>
+                   | Nome | 
+                </th>
+            
+                <th>
+                   | Endereço | 
+                </th>
+            
+                <th>
+                   | CPF |
+                </th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+            @foreach ( var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientesId)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Endereco)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPF)
+                    </td>
+
+                    <td>
+                        <a asp-action="AtualizarCliente" asp-route-id="@item.ClientesId"
+                           class="btn btn-info">Atualizar</a>
+
+                        <a asp-action="Detalhes" asp-route-id="@item.ClientesId"
+                           class="btn btn-warning">Detalhes</a>
+
+                        <a asp-action="Excluir" asp-route-id="@item.ClientesId"
+                           class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

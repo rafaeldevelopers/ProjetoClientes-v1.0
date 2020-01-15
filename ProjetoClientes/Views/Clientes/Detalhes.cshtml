@@ -1,0 +1,22 @@
+﻿@model ProjetoClientes.Models.Clientes
+
+
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div class="row">
+  Nome: @Html.DisplayFor(model => model.Nome)
+  <br/>
+  CPF: @Html.DisplayFor(model => model.CPF)
+  <br />
+  Endereço: @Html.DisplayFor(model => model.Endereco)
+  <br />
+   
+    <a asp-action="Index" class="btn btn-info">Voltar</a>
+    
+
+</div>

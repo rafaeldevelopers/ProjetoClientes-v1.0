@@ -1,0 +1,27 @@
+﻿@model ProjetoClientes.Models.Clientes
+
+@{
+    ViewData["Title"] = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<div class="row">
+    @Html.DisplayFor(model => model.Nome)
+    @Html.DisplayFor(model => model.CPF)
+    @Html.DisplayFor(model => model.Endereco)
+
+
+</div>
+
+<form asp-action="Excluir">
+    <input type="hidden" asp-for="ClientesId" />
+    <input type="submit" value="Excluir" class="btn btn-danger" />
+        <a asp-action="Index" class="btn btn-info">Voltar</a>
+
+</form>
+
+
+<div>
+    
+</div>
